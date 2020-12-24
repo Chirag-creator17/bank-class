@@ -1,0 +1,127 @@
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+ int c=0;
+class bank
+{
+    int acc[10],bal[10];
+    char name[10][20],type[10][2];
+public:
+    void get();
+    void dep();
+    void wid();
+    void nb();
+};
+void bank :: get()
+{
+    cout<<"Enter name of account holder:";
+    cin>>name[c];
+    cout<<"Enter account number:";
+    cin>>acc[c];
+    cout<<"Enter type of account :";
+    cin>>type[c];
+    cout<<"Enter balance:";
+    cin>>bal[c];
+    c++;
+}
+void bank :: dep()
+{
+    int a,d,i;
+    cout<<"Enter account number:";
+    cin>>a;
+    for(i=0;acc[i]!='\0';i++)
+    {
+        if (acc[i]==a)
+        {
+            break;
+        }
+    }
+    cout<<"Enter amount to be deposited:";
+    cin>>d;
+    bal[i]=bal[i]+d;
+    cout<<endl<<"New balance is :"<<bal[i]<<endl;
+}
+void bank :: wid()
+{
+    int f,w,i;
+    cout<<"Enter account number:";
+    cin>>f;
+    for(i=0;acc[i]!='\0';i++)
+    {
+        if (acc[i]==f)
+        {
+            break;
+        }
+    }
+    cout<<"Enter amount to be withdraw";
+    cin>>w;
+    if (w<bal[i])
+    {
+        bal[i]=bal[i]-w;
+    }
+    else
+    {
+        cout<<"insuficient balance"<<endl;
+    }
+    cout<<"new balance is:"<<bal[i]<<endl;
+}
+void bank :: nb()
+{
+    int a,d,i;
+    cout<<"Enter account number:";
+    cin>>a;
+    for(i=0;acc[i]!='\0';i++)
+    {
+        if (acc[i]==a)
+        {
+            break;
+        }
+    }
+    cout<<"name is :"<<name[i]<<endl;
+    cout<<"balance :"<<bal[i]<<endl;
+}
+int main()
+{
+    int p;
+    bank x;
+    while (1)
+    {
+        cout<<"**************************************"<<endl;
+        cout<<"1.To append records"<<endl<<"2.To deposite an amount"<<endl<<"3.To withdraw amount"<<endl<<"4.To display name and balance"<<endl<<"5.exit"<<endl;
+        cout<<"Enter your choice:";
+        cin>>p;
+        switch(p)
+        {
+        case 1:
+            {
+                x.get();
+                break;
+            }
+        case 2:
+            {
+                x.dep();
+                break;
+            }
+        case 3:
+            {
+                x.wid();
+                break;
+            }
+        case 4:
+            {
+                x.nb();
+                break;
+            }
+        case 5:
+            {
+                exit(0);
+            }
+        default:
+            {
+                cout<<"wrong choice"<<endl;
+            }
+        }
+
+    }
+    return 0;
+}
