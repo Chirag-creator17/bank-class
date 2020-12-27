@@ -29,7 +29,7 @@ void bank :: dep()
     int a,d,i;
     cout<<"Enter account number:";
     cin>>a;
-    for(i=0;acc[i]!='\0';i++)
+    for(i=0;i<=c;i++)
     {
         if (acc[i]==a)
         {
@@ -46,7 +46,7 @@ void bank :: wid()
     int f,w,i;
     cout<<"Enter account number:";
     cin>>f;
-    for(i=0;acc[i]!='\0';i++)
+    for(i=0;i<=c;i++)
     {
         if (acc[i]==f)
         {
@@ -70,7 +70,7 @@ void bank :: nb()
     int a,d,i;
     cout<<"Enter account number:";
     cin>>a;
-    for(i=0;acc[i]!='\0';i++)
+    for(i=0;i<=c;i++)
     {
         if (acc[i]==a)
         {
